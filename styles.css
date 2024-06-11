@@ -23,22 +23,59 @@ svg {
   max-width: 100%;
 }
 
-main,
-footer {
-  margin: 0 auto;
-  width: 90%;
-}
-
 html {
   font-family: "Manrope", sans-serif;
+  font-size: 13px;
   background-color: var(--light-greyish-blue);
+}
+
+.main-container {
+  margin: 4em auto;
+  margin-bottom: 0;
+  width: 90%;
+  background-color: #fff;
 }
 
 .dresser-img {
   border-radius: 12px 12px 0 0;
+  width: 100%;
 }
 
-footer {
+.description {
+  padding: 3em;
+}
+
+.main-container h1 {
+  font-size: 1.2rem;
+  color: var(--very-dark-greyish-blue);
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  margin-bottom: 1em;
+}
+
+.main-container p {
+  color: #6e8098;
+  margin-bottom: 1em;
+  line-height: 20px;
+  letter-spacing: 0.12px;
+}
+
+.footer-container {
+  margin: 0 auto;
+  width: 90%;
   display: flex;
   justify-content: space-between;
+  background-color: #fff;
+  padding: 0 3em;
+}
+
+.author-container {
+  display: flex;
+  align-items: center;
+}
+
+.author-img {
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
 }
