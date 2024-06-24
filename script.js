@@ -1,5 +1,6 @@
-const button = document.getElementById("btn");
+const shareBtn = document.getElementById("share-btn");
+const shareOverlay = document.getElementById("share-overlay");
 
-button.addEventListener("click", function () {
+shareBtn.addEventListener("click", function () {
   console.log("I have been clicked!");
 });

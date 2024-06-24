@@ -43,24 +43,46 @@ Pending...
 - CSS Grid
 - Mobile-first workflow
 
-### What I learned
+### What I learned / Issues
 
-Pending...
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+To achieve the overlap effect of the sub-container over the dresser image on larger screens, I utilized z-index in combination with flexbox properties. This approach allowed me to visually layer the elements while maintaining responsiveness and ensuring a clean layout across different screen sizes.
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+@media (min-width: 1024px) {
+  .sub-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 0px 12px 12px 0;
+    padding: 4em 3em 3em 3em;
+    z-index: 1; /* Ensures the sub-container overlaps the dresser image */
+  }
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+Used padding 0.5em to center the arrow in the share button:
+
+```css
+.btn-share {
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--light-greyish-blue);
+  color: var(--greyish-blue);
+  cursor: pointer;
+  padding: 0.5em;
+}
+```
+
+I ran into some specificity issues when targeting the author's name. I don't like the solution below. But it works for now. I guess I could have used an id instead of classes, but I try to only use id's for JavaScript...
+
+```css
+.author-wrapper .author-text-wrapper .author-name {
+  color: var(--very-dark-greyish-blue);
+  font-weight: 800;
+}
 ```
 
 ### Useful resources

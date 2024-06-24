@@ -33,7 +33,7 @@ html {
   margin: 4em auto;
   margin-bottom: 0;
   width: 90%;
-  background-color: #fff;
+  max-height: 40vh;
 }
 
 .dresser-img {
@@ -42,40 +42,147 @@ html {
 }
 
 .description {
-  padding: 3em;
+  padding: 3em 3em 2em 3em;
+  background-color: #fff;
 }
 
 .main-container h1 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--very-dark-greyish-blue);
   line-height: 24px;
   letter-spacing: 0.2px;
   margin-bottom: 1em;
+  letter-spacing: 0.4px;
+  line-height: 1.9rem;
 }
 
 .main-container p {
-  color: #6e8098;
+  color: var(--greyish-blue);
   margin-bottom: 1em;
   line-height: 20px;
-  letter-spacing: 0.12px;
+  letter-spacing: 0.25px;
+  font-size: 1.1rem;
 }
 
-.footer-container {
+.contact-section {
+  display: flex;
+  align-items: center;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   background-color: #fff;
-  padding: 0 3em;
+  padding: 0 3em 2em 3em;
 }
 
-.author-container {
+.author-wrapper > div > p {
+  margin: 0;
+}
+
+.author-wrapper {
   display: flex;
-  align-items: center;
 }
 
 .author-img {
   border-radius: 50%;
-  width: 4em;
-  height: 4em;
+  width: 4.5em;
+  height: 4.5em;
+}
+
+.author-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.6em;
+  justify-content: center;
+}
+
+.author-wrapper .author-text-wrapper .author-name {
+  color: var(--very-dark-greyish-blue);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.author-date {
+  padding-top: 0.3em;
+  font-size: 0.9rem;
+}
+
+.btn-share {
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--light-greyish-blue);
+  color: var(--greyish-blue);
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  width: 100%;
+}
+
+#share-overlay {
+  background-color: var(--dark-greyish-blue);
+}
+
+/* MEDIA QUERY */
+
+@media (min-width: 1024px) {
+  .main-container {
+    display: flex;
+    max-width: 1000px;
+    height: 60vh;
+  }
+
+  .dresser-img {
+    border-radius: 12px 0px 0 12px;
+    position: relative;
+    left: 0;
+    margin-right: -10%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .main-container > .dresser-img,
+  .main-container > .sub-container {
+    flex: 1;
+  }
+
+  .main-container h1 {
+    font-size: 2.1rem;
+    letter-spacing: 0.25px;
+    line-height: 2.5rem;
+  }
+
+  .main-container p {
+    font-size: 1.2rem;
+    color: var(--greyish-blue);
+    letter-spacing: 0.25px;
+    line-height: 1.8rem;
+    /* padding-top: 0.2em; */
+  }
+
+  .description {
+    padding: 0;
+  }
+
+  .sub-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 0px 12px 12px 0;
+    padding: 4em 3em 3em 3em;
+    z-index: 1;
+  }
+
+  .contact-section {
+    padding: 0;
+  }
 }
