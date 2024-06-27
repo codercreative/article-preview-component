@@ -4,6 +4,7 @@
   --very-dark-greyish-blue: hsl(217, 19%, 35%);
   --greyish-blue: hsl(212, 23%, 69%);
   --light-greyish-blue: hsl(210, 46%, 95%);
+  --white: hsl(0, 0%, 100%);
 }
 
 *,
@@ -33,6 +34,7 @@ html {
   margin: 4em auto;
   margin-bottom: 0;
   width: 90%;
+  max-width: 400px;
   max-height: 40vh;
 }
 
@@ -42,8 +44,8 @@ html {
 }
 
 .description {
-  padding: 3em 3em 2em 3em;
-  background-color: #fff;
+  padding: 2.8em 3em 2em 3em;
+  background-color: var(--white);
 }
 
 .main-container h1 {
@@ -59,7 +61,7 @@ html {
 .main-container p {
   color: var(--greyish-blue);
   margin-bottom: 1em;
-  line-height: 20px;
+  line-height: 1.7;
   letter-spacing: 0.25px;
   font-size: 1.1rem;
 }
@@ -71,8 +73,9 @@ html {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: var(--white);
   padding: 0 3em 2em 3em;
+  border-radius: 0 0 12px 12px;
 }
 
 .author-wrapper > div > p {
@@ -92,18 +95,17 @@ html {
 .author-text-wrapper {
   display: flex;
   flex-direction: column;
-  margin-left: 0.6em;
+  margin-left: 0.9em;
   justify-content: center;
 }
 
 .author-wrapper .author-text-wrapper .author-name {
   color: var(--very-dark-greyish-blue);
-  font-weight: 800;
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
-.author-date {
-  padding-top: 0.3em;
+.author-wrapper .author-text-wrapper .author-date {
   font-size: 0.9rem;
 }
 
@@ -118,26 +120,50 @@ html {
   padding: 0.5em;
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  position: absolute;
-  bottom: 1em;
-  left: 0;
-  width: 100%;
+.share-overlay {
+  background-color: var(--very-dark-greyish-blue);
+  border-radius: 0 0 12px 12px;
 }
 
-#share-overlay {
-  background-color: var(--dark-greyish-blue);
+.social-icons {
+  display: flex;
+  padding: 2em 3em;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  margin-left: 1em;
+}
+
+.share-overlay .share-text {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+.share-overlay .social-icons .btn-share {
+  color: var(--white);
+  margin-left: auto;
+  background-color: var(--greyish-blue);
 }
 
 /* MEDIA QUERY */
+
+@media (max-width: 320px) {
+  .author-wrapper .author-text-wrapper .author-name {
+    font-size: 0.8rem;
+  }
+
+  .author-wrapper .author-text-wrapper .author-date {
+    font-size: 0.7rem;
+  }
+}
 
 @media (min-width: 1024px) {
   .main-container {
     display: flex;
     max-width: 1000px;
-    height: 60vh;
   }
 
   .dresser-img {
@@ -155,9 +181,9 @@ html {
   }
 
   .main-container h1 {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
     letter-spacing: 0.25px;
-    line-height: 2.5rem;
+    line-height: 2.1rem;
   }
 
   .main-container p {
@@ -165,7 +191,6 @@ html {
     color: var(--greyish-blue);
     letter-spacing: 0.25px;
     line-height: 1.8rem;
-    /* padding-top: 0.2em; */
   }
 
   .description {
@@ -175,10 +200,10 @@ html {
   .sub-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-color: #fff;
+    justify-content: center;
+    background-color: var(--white);
     border-radius: 0px 12px 12px 0;
-    padding: 4em 3em 3em 3em;
+    padding: 3em;
     z-index: 1;
   }
 
