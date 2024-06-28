@@ -2,17 +2,144 @@
 
 :root {
   --very-dark-greyish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
   --greyish-blue: hsl(212, 23%, 69%);
   --light-greyish-blue: hsl(210, 46%, 95%);
   --white: hsl(0, 0%, 100%);
 }
+
+/* Eric Meyer reset from here  */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* To here */
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
 }
 
 img,
@@ -20,7 +147,6 @@ picture,
 video,
 canvas,
 svg {
-  display: block;
   max-width: 100%;
 }
 
@@ -35,7 +161,6 @@ html {
   margin-bottom: 0;
   width: 90%;
   max-width: 400px;
-  max-height: 40vh;
 }
 
 .dresser-img {
@@ -48,8 +173,9 @@ html {
   background-color: var(--white);
 }
 
-.main-container h1 {
+.main-container h2 {
   font-size: 1.3rem;
+  font-weight: 800;
   color: var(--very-dark-greyish-blue);
   line-height: 24px;
   letter-spacing: 0.2px;
@@ -59,7 +185,7 @@ html {
 }
 
 .main-container p {
-  color: var(--greyish-blue);
+  color: var(--desaturated-dark-blue);
   margin-bottom: 1em;
   line-height: 1.7;
   letter-spacing: 0.25px;
@@ -76,6 +202,7 @@ html {
   background-color: var(--white);
   padding: 0 3em 2em 3em;
   border-radius: 0 0 12px 12px;
+  position: relative;
 }
 
 .author-wrapper > div > p {
@@ -107,9 +234,10 @@ html {
 
 .author-wrapper .author-text-wrapper .author-date {
   font-size: 0.9rem;
+  color: var(--desaturated-dark-blue);
 }
 
-.btn-share {
+.share-btn {
   height: 2em;
   width: 2em;
   border-radius: 50%;
@@ -120,9 +248,25 @@ html {
   padding: 0.5em;
 }
 
-.share-overlay {
+.overlay {
+  display: none;
   background-color: var(--very-dark-greyish-blue);
   border-radius: 0 0 12px 12px;
+
+  position: absolute;
+  top: calc(100% - 30px);
+  left: 50%;
+  transform: translate(-50%, -70%);
+
+  z-index: 10;
+  width: 80%;
+  max-width: 400px;
+  width: 100%;
+  padding: 0.5em 0;
+}
+
+.overlay.active {
+  display: block;
 }
 
 .social-icons {
@@ -136,19 +280,25 @@ html {
   margin-left: 1em;
 }
 
-.share-overlay .share-text {
+.overlay .overlay-text {
   text-transform: uppercase;
   letter-spacing: 5px;
   margin: 0;
 }
 
-.share-overlay .social-icons .btn-share {
-  color: var(--white);
+#back-btn {
   margin-left: auto;
-  background-color: var(--greyish-blue);
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--light-greyish-blue);
+  color: var(--greyish-blue);
+  cursor: pointer;
+  padding: 0.5em;
 }
 
-/* MEDIA QUERY */
+/* MEDIA QUERIES */
 
 @media (max-width: 320px) {
   .author-wrapper .author-text-wrapper .author-name {
@@ -158,20 +308,33 @@ html {
   .author-wrapper .author-text-wrapper .author-date {
     font-size: 0.7rem;
   }
+
+  .social-icons {
+    padding: 2em;
+  }
+
+  .overlay .overlay-text {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    margin-left: 0.7em;
+  }
 }
 
 @media (min-width: 1024px) {
   .main-container {
     display: flex;
-    max-width: 1000px;
+    max-width: 1200px;
+    min-height: 40vh;
   }
 
   .dresser-img {
     border-radius: 12px 0px 0 12px;
     position: relative;
+    object-fit: cover;
     left: 0;
     margin-right: -10%;
-    object-fit: cover;
     width: 100%;
   }
 
@@ -180,17 +343,18 @@ html {
     flex: 1;
   }
 
-  .main-container h1 {
+  .main-container h2 {
     font-size: 1.8rem;
     letter-spacing: 0.25px;
-    line-height: 2.1rem;
+    line-height: 2.5rem;
   }
 
   .main-container p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--greyish-blue);
     letter-spacing: 0.25px;
     line-height: 1.8rem;
+    margin-top: 2.3em;
   }
 
   .description {
@@ -200,7 +364,7 @@ html {
   .sub-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     background-color: var(--white);
     border-radius: 0px 12px 12px 0;
     padding: 3em;
@@ -209,5 +373,59 @@ html {
 
   .contact-section {
     padding: 0;
+  }
+
+  .overlay {
+    border-radius: 12px 12px 12px 12px;
+    padding: 0;
+    top: calc(100% - 130px);
+    /* top: -100%; */
+    /* left: 85%; */
+    left: 96%;
+    /* transform: translate(-50%, -50%); */
+    transform: translate(-55%);
+    max-width: 230px;
+    padding: 0.5em 0;
+    z-index: 10;
+  }
+
+  .overlay::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 58%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--very-dark-greyish-blue) transparent transparent
+      transparent;
+  }
+
+  .social-icons {
+    padding: 0.3em;
+  }
+
+  .push {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main-container h2 {
+    font-size: 2.3rem;
+    letter-spacing: 0.25px;
+    line-height: 3.2rem;
+  }
+
+  .main-container p {
+    font-size: 1.5rem;
+    color: var(--greyish-blue);
+    letter-spacing: 0.25px;
+    line-height: 2.5rem;
+    margin-top: 2.3em;
+  }
+
+  .sub-container {
+    padding: 4em;
   }
 }

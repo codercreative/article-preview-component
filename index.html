@@ -14,17 +14,6 @@
     <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
     <title>Frontend Mentor | Article preview component</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <main class="main-container">
@@ -34,12 +23,12 @@
         alt="Green dresser with two picture frames and a vase"
       />
 
-      <section class="sub-container">
+      <div class="sub-container">
         <div class="description">
-          <h1>
+          <h2>
             Shift the overall look and feel by adding these wonderful touches to
             furniture in your home
-          </h1>
+          </h2>
 
           <p>
             Ever been in a room and felt like something was missing? Perhaps it
@@ -60,20 +49,31 @@
               <p class="author-date">28 Jun 2020</p>
             </div>
           </div>
-          <button id="share-btn" class="btn-share">
+          <button id="share-btn" class="share-btn">
             <img src="images/icon-share.svg" alt="" />
           </button>
+          <!-- overlay shown by click of button-->
+          <div
+            id="overlay"
+            class="author-wrapper overlay"
+            aria-labelledby="share-dialog-title"
+          >
+            <div class="social-icons">
+              <p class="overlay-text">Share</p>
+              <img class="icon" src="images/icon-facebook.svg" alt="" />
+              <img class="icon" src="images/icon-twitter.svg" alt="" />
+              <img class="icon" src="images/icon-pinterest.svg" alt="" />
+              <button
+                id="back-btn"
+                class="push"
+                alt="close overlay with social icons"
+              >
+                <img src="images/icon-share.svg" />
+              </button>
+            </div>
+          </div>
         </div>
-      </section>
-      <section id="share-overlay" class="share-overlay">
-        <div class="social-icons">
-          <p class="share-text">Share</p>
-          <img class="icon" src="images/icon-facebook.svg" alt="" />
-          <img class="icon" src="images/icon-twitter.svg" alt="" />
-          <img class="icon" src="images/icon-pinterest.svg" alt="" />
-          <img class="btn-share push" src="images/icon-share.svg" alt="" />
-        </div>
-      </section>
+      </div>
     </main>
   </body>
 </html>

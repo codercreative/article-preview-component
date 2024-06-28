@@ -45,6 +45,8 @@ Pending...
 
 ### What I learned / Issues
 
+In general, the issue of making the overlay fit on all screen sizes was the biggest challenge for me.
+
 To achieve the overlap effect of the sub-container over the dresser image on larger screens, I utilized z-index in combination with flexbox properties. This approach allowed me to visually layer the elements while maintaining responsiveness and ensuring a clean layout across different screen sizes.
 
 ```css
@@ -87,7 +89,4 @@ I ran into some specificity issues when targeting the author's name. I don't lik
 
 ### Useful resources
 
-Pending
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Thomas Sankara's Youtube video on building the article preview component master](https://www.youtube.com/watch?v=ks_LoMY72Ps) Had to view how Thomas solved the issue of aligning the overlay so that it fit on all device sizes
