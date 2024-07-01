@@ -49,8 +49,12 @@
               <p class="author-date">28 Jun 2020</p>
             </div>
           </div>
-          <button id="share-btn" class="share-btn">
-            <img src="images/icon-share.svg" alt="" />
+          <button
+            id="share-btn"
+            class="share-btn"
+            aria-label="share this article"
+          >
+            <img src="images/icon-share.svg" alt="share" />
           </button>
           <!-- overlay shown by click of button-->
           <div
@@ -60,15 +64,26 @@
           >
             <div class="social-icons">
               <p class="overlay-text">Share</p>
-              <img class="icon" src="images/icon-facebook.svg" alt="" />
-              <img class="icon" src="images/icon-twitter.svg" alt="" />
-              <img class="icon" src="images/icon-pinterest.svg" alt="" />
-              <button
-                id="back-btn"
-                class="push"
-                alt="close overlay with social icons"
-              >
-                <img src="images/icon-share.svg" />
+              <a href="#" aria-label="Facebook">
+                <img
+                  class="icon"
+                  src="images/icon-facebook.svg"
+                  alt="Facebook"
+                />
+              </a>
+              <a href="#" aria-label="Twitter">
+                <img class="icon" src="images/icon-twitter.svg" alt="Twitter" />
+              </a>
+              <a href="#" aria-label="Pinterest">
+                <img
+                  class="icon"
+                  src="images/icon-pinterest.svg"
+                  alt="Pinterest"
+                />
+              </a>
+
+              <button id="back-btn" class="push" aria-label="Back to article">
+                <img src="images/icon-share.svg" alt="Go back to article" />
               </button>
             </div>
           </div>

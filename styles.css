@@ -8,7 +8,7 @@
   --white: hsl(0, 0%, 100%);
 }
 
-/* Eric Meyer reset from here  */
+/* Eric Meyer reset  */
 html,
 body,
 div,
@@ -133,7 +133,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* To here */
+
+/* My general resets */
 
 *,
 *::before,
@@ -379,14 +380,15 @@ html {
     border-radius: 12px 12px 12px 12px;
     padding: 0;
     top: calc(100% - 130px);
-    /* top: -100%; */
-    /* left: 85%; */
     left: 96%;
-    /* transform: translate(-50%, -50%); */
     transform: translate(-55%);
     max-width: 230px;
-    padding: 0.5em 0;
+    padding: 0.5em 2em;
     z-index: 10;
+  }
+
+  .overlay .overlay-text {
+    font-size: 0.9rem;
   }
 
   .overlay::after {

@@ -11,7 +11,6 @@ This is a solution to the [Article preview component challenge on Frontend Mento
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Useful resources](#useful-resources)
 
 ## Overview
 
@@ -24,14 +23,13 @@ Users should be able to:
 
 ### Screenshot
 
-Pending...
-
-![](./screenshot.jpg)
+![](./images/mobile.png)
+![](./images/mobile-w-overlay.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Github repo](https://github.com/codercreative/article-preview-component)
+- [Live Site URL](https://chris-article-preview.netlify.app/)
 
 ## My process
 
@@ -40,14 +38,13 @@ Pending...
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 
 ### What I learned / Issues
 
-In general, the issue of making the overlay fit on all screen sizes was the biggest challenge for me.
+The biggest hurdle for me in this challenge wasn't so much the JavaScript -- but rather making the overlay fit on all screen sizes.
 
-To achieve the overlap effect of the sub-container over the dresser image on larger screens, I utilized z-index in combination with flexbox properties. This approach allowed me to visually layer the elements while maintaining responsiveness and ensuring a clean layout across different screen sizes.
+I tried to achieve an overlap effect of the sub-container over the dresser image on larger screens.
 
 ```css
 @media (min-width: 1024px) {
@@ -87,6 +84,11 @@ I ran into some specificity issues when targeting the author's name. I don't lik
 }
 ```
 
-### Useful resources
+Learned that it is good practice to check element existence before adding event listeners:
 
-- [Thomas Sankara's Youtube video on building the article preview component master](https://www.youtube.com/watch?v=ks_LoMY72Ps) Had to view how Thomas solved the issue of aligning the overlay so that it fit on all device sizes
+```js
+if (shareBtn && backBtn && overlay) {
+  shareBtn.addEventListener("click", toggleOverlay);
+  backBtn.addEventListener("click", toggleOverlay);
+}
+```
