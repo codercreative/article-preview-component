@@ -11,6 +11,7 @@ This is a solution to the [Article preview component challenge on Frontend Mento
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
+  - [Helpful feedback](#helpful-feedback)
 
 ## Overview
 
@@ -40,7 +41,7 @@ Users should be able to:
 - Flexbox
 - Mobile-first workflow
 
-### What I learned / Issues
+### What I learned
 
 The biggest hurdle for me in this challenge wasn't so much the JavaScript -- but rather making the overlay fit on all screen sizes.
 
@@ -90,5 +91,40 @@ Learned that it is good practice to check element existence before adding event 
 if (shareBtn && backBtn && overlay) {
   shareBtn.addEventListener("click", toggleOverlay);
   backBtn.addEventListener("click", toggleOverlay);
+}
+```
+
+### Helpful feedback
+
+@Pablodev from Frontend Mentor provided very helpful feedback -- e.g. that I make sure to center the content in the middle of the screen using flexbox to mark my project complete and visually balanced.
+
+```css
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  background-color: var(--light-greyish-blue);
+}
+```
+
+The above coding was perfect for mobile view. For desktop, I had to modify `align-items: center` to `align-items: stretch` in `.main-container` for the dresser image and sub-container to align properly.
+
+```css
+@media (min-width: 1024px) {
+  .main-container {
+    flex-direction: row;
+    max-width: 1200px;
+    min-height: 40vh;
+    align-items: stretch;
+    justify-content: center;
+  }
 }
 ```
