@@ -8,147 +8,11 @@
   --white: hsl(0, 0%, 100%);
 }
 
-/* Eric Meyer reset  */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* My general resets */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  max-width: 100%;
+html {
+  height: 100%;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  background-color: var(--light-greyish-blue);
 }
 
 body {
@@ -159,20 +23,12 @@ body {
   margin: 0;
 }
 
-html {
-  height: 100%;
-  font-family: "Manrope", sans-serif;
-  font-size: 13px;
-  background-color: var(--light-greyish-blue);
-}
-
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  margin-bottom: 0;
   width: 90%;
   max-width: 400px;
 }
@@ -187,18 +43,16 @@ html {
   background-color: var(--white);
 }
 
-.main-container h2 {
+.title {
   font-size: 1.3rem;
   font-weight: 800;
   color: var(--very-dark-greyish-blue);
-  line-height: 24px;
-  letter-spacing: 0.2px;
-  margin-bottom: 1em;
   letter-spacing: 0.4px;
   line-height: 1.9rem;
+  margin-bottom: 1em;
 }
 
-.main-container p {
+.text {
   color: var(--desaturated-dark-blue);
   margin-bottom: 1em;
   line-height: 1.7;
@@ -209,18 +63,12 @@ html {
 .contact-section {
   display: flex;
   align-items: center;
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
   justify-content: space-between;
+  width: 100%;
   background-color: var(--white);
   padding: 0 3em 2em 3em;
   border-radius: 0 0 12px 12px;
   position: relative;
-}
-
-.author-wrapper > div > p {
-  margin: 0;
 }
 
 .author-wrapper {
@@ -240,18 +88,20 @@ html {
   justify-content: center;
 }
 
-.author-wrapper .author-text-wrapper .author-name {
+.author-name {
   color: var(--very-dark-greyish-blue);
   font-weight: 700;
   font-size: 1rem;
+  margin-bottom: 0.7em;
 }
 
-.author-wrapper .author-text-wrapper .author-date {
+.author-date {
   font-size: 0.9rem;
   color: var(--desaturated-dark-blue);
 }
 
-.share-btn {
+.share-btn,
+.back-btn {
   height: 2em;
   width: 2em;
   border-radius: 50%;
@@ -259,21 +109,19 @@ html {
   background-color: var(--light-greyish-blue);
   color: var(--greyish-blue);
   cursor: pointer;
-  padding: 0.5em;
+  padding: 0.3em;
+  margin-left: auto;
 }
 
 .overlay {
   display: none;
+  position: absolute;
   background-color: var(--very-dark-greyish-blue);
   border-radius: 0 0 12px 12px;
-
-  position: absolute;
   top: calc(100% - 30px);
   left: 50%;
   transform: translate(-50%, -70%);
-
   z-index: 10;
-  width: 80%;
   max-width: 400px;
   width: 100%;
   padding: 0.5em 0;
@@ -298,28 +146,17 @@ html {
   text-transform: uppercase;
   letter-spacing: 5px;
   margin: 0;
-}
-
-#back-btn {
-  margin-left: auto;
-  height: 2em;
-  width: 2em;
-  border-radius: 50%;
-  border: none;
-  background-color: var(--light-greyish-blue);
   color: var(--greyish-blue);
-  cursor: pointer;
-  padding: 0.5em;
 }
 
 /* MEDIA QUERIES */
 
 @media (max-width: 320px) {
-  .author-wrapper .author-text-wrapper .author-name {
+  .author-name {
     font-size: 0.8rem;
   }
 
-  .author-wrapper .author-text-wrapper .author-date {
+  .author-date {
     font-size: 0.7rem;
   }
 
@@ -340,7 +177,6 @@ html {
   .main-container {
     flex-direction: row;
     max-width: 1200px;
-    min-height: 40vh;
     align-items: stretch;
     justify-content: center;
   }
@@ -348,29 +184,21 @@ html {
   .dresser-img {
     border-radius: 12px 0px 0 12px;
     object-fit: cover;
-    width: 50%;
+    max-width: 400px;
     position: relative;
     left: 0;
     margin-right: -10%;
   }
 
-  .main-container > .dresser-img,
-  .main-container > .sub-container {
-    flex: 1;
+  .title {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
   }
 
-  .main-container h2 {
-    font-size: 2.3rem;
-    letter-spacing: 0.25px;
-    line-height: 3.2rem;
-  }
-
-  .main-container p {
-    font-size: 1.5rem;
+  .text {
+    font-size: 1.1rem;
     color: var(--greyish-blue);
-    letter-spacing: 0.25px;
-    line-height: 2.5rem;
-    margin-top: 1.5em;
+    line-height: 2rem;
   }
 
   .description {
@@ -380,38 +208,33 @@ html {
   .sub-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: var(--white);
     border-radius: 0px 12px 12px 0;
-    padding: 4em;
+    padding: 1.5em 2.3em;
     z-index: 1;
-    width: 50%;
+    max-width: 450px;
   }
 
   .contact-section {
-    padding: 0;
+    padding: 0.5em 0 0 0;
   }
 
   .overlay {
-    border-radius: 12px 12px 12px 12px;
-    padding: 0;
-    top: calc(100% - 130px);
+    border-radius: 12px;
+    top: calc(100% - 115px);
     left: 96%;
-    transform: translate(-55%);
+    transform: translate(-50%);
     max-width: 230px;
     padding: 0.5em 2em;
     z-index: 10;
-  }
-
-  .overlay .overlay-text {
-    font-size: 0.9rem;
   }
 
   .overlay::after {
     content: "";
     position: absolute;
     bottom: -20px;
-    left: 58%;
+    left: 50%;
     transform: translateX(-50%);
     border-width: 10px;
     border-style: solid;
@@ -423,7 +246,7 @@ html {
     padding: 0.3em;
   }
 
-  .push {
+  .back-btn-hidden {
     display: none;
   }
 }

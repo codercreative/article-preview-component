@@ -2,7 +2,7 @@ const shareBtn = document.getElementById("share-btn");
 const backBtn = document.getElementById("back-btn");
 const overlay = document.getElementById("overlay");
 
-if (shareBtn && backBtn && overlay) {
+if (shareBtn && overlay) {
   shareBtn.addEventListener("click", toggleOverlay);
   backBtn.addEventListener("click", toggleOverlay);
 }

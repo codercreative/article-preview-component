@@ -11,6 +11,7 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
     <title>Frontend Mentor | Article preview component</title>
@@ -25,12 +26,12 @@
 
       <div class="sub-container">
         <div class="description">
-          <h2>
+          <h2 class="title">
             Shift the overall look and feel by adding these wonderful touches to
             furniture in your home
           </h2>
 
-          <p>
+          <p class="text">
             Ever been in a room and felt like something was missing? Perhaps it
             felt slightly bare and uninviting. I’ve got some simple tips to help
             you make any room feel complete.
@@ -63,26 +64,34 @@
             aria-labelledby="share-dialog-title"
           >
             <div class="social-icons">
-              <p class="overlay-text">Share</p>
+              <p id="share-dialog-title" class="overlay-text">Share</p>
               <a href="#" aria-label="Facebook">
                 <img
                   class="icon"
                   src="images/icon-facebook.svg"
-                  alt="Facebook"
+                  aria-hidden="true"
                 />
               </a>
               <a href="#" aria-label="Twitter">
-                <img class="icon" src="images/icon-twitter.svg" alt="Twitter" />
+                <img
+                  class="icon"
+                  src="images/icon-twitter.svg"
+                  aria-hidden="true"
+                />
               </a>
               <a href="#" aria-label="Pinterest">
                 <img
                   class="icon"
                   src="images/icon-pinterest.svg"
-                  alt="Pinterest"
+                  aria-hidden="true"
                 />
               </a>
 
-              <button id="back-btn" class="push" aria-label="Back to article">
+              <button
+                id="back-btn"
+                class="back-btn back-btn-hidden"
+                aria-label="Back to article"
+              >
                 <img src="images/icon-share.svg" alt="Go back to article" />
               </button>
             </div>

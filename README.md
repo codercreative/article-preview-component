@@ -96,7 +96,7 @@ if (shareBtn && backBtn && overlay) {
 
 ### Helpful feedback
 
-@Pablodev from Frontend Mentor provided very helpful feedback -- e.g. that I make sure to center the content in the middle of the screen using flexbox to mark my project complete and visually balanced.
+@pablodev from Frontend Mentor provided very helpful feedback -- e.g. that I make sure to center the content in the middle of the screen using flexbox to mark my project complete and visually balanced.
 
 ```css
 body {
@@ -128,3 +128,38 @@ The above coding was perfect for mobile view. For desktop, I had to modify `alig
   }
 }
 ```
+
+Also, @thomashertog from Frontend Mentor provided valuable feedback.
+
+The social media icons are decorative, so I keep the `aria-label` for each icon within `<a>` and then for the icon `img`, I add `aria-hidden="true"`
+
+```html
+<div class="social-icons">
+  <p class="overlay-text">Share</p>
+  <a href="#" aria-label="Facebook">
+    <img class="icon" src="images/icon-facebook.svg" aria-hidden="true" />
+  </a>
+  <a href="#" aria-label="Twitter">
+    <img class="icon" src="images/icon-twitter.svg" aria-hidden="true" />
+  </a>
+  <a href="#" aria-label="Pinterest">
+    <img class="icon" src="images/icon-pinterest.svg" aria-hidden="true" />
+  </a>
+</div>
+```
+
+Making sure that the `aria-labelled-by` attribute is pointing to the share element. When a screen reader encounters the #overlay div, it will announce "Share" because that's the content of the element referenced by aria-labelledby="share-dialog-title".
+
+```html
+<div
+  id="overlay"
+  class="author-wrapper overlay"
+  aria-labelledby="share-dialog-title"
+>
+  <!-- Content here -->
+</div>
+
+<p id="share-dialog-title" class="overlay-text">Share</p>
+```
+
+Also, per @pablodev and @thomashertog's recommendations, I cleaned up my CSS and placed the resets in a normalize.css file.
