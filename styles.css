@@ -66,7 +66,7 @@ body {
   justify-content: space-between;
   width: 100%;
   background-color: var(--white);
-  padding: 0 3em 2em 3em;
+  padding: 0 3em 1.5em 3em;
   border-radius: 0 0 12px 12px;
   position: relative;
 }
@@ -124,7 +124,7 @@ body {
   z-index: 10;
   max-width: 400px;
   width: 100%;
-  padding: 0.5em 0;
+  padding: 0.7em 0 0.7em;
 }
 
 .overlay.active {
@@ -168,6 +168,10 @@ body {
     font-size: 0.9rem;
   }
 
+  .overlay {
+    padding: 0.7em 1em;
+  }
+
   .icon {
     margin-left: 0.7em;
   }
@@ -191,8 +195,9 @@ body {
   }
 
   .title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 2.4rem;
+    margin: 0.5em 0;
   }
 
   .text {
@@ -211,7 +216,7 @@ body {
     justify-content: space-around;
     background-color: var(--white);
     border-radius: 0px 12px 12px 0;
-    padding: 1.5em 2.3em;
+    padding: 1.8em 2.3em;
     z-index: 1;
     max-width: 450px;
   }
@@ -223,7 +228,8 @@ body {
   .overlay {
     border-radius: 12px;
     top: calc(100% - 115px);
-    left: 96%;
+    top: calc(100% - 110px);
+    left: 97%;
     transform: translate(-50%);
     max-width: 230px;
     padding: 0.5em 2em;
@@ -235,6 +241,7 @@ body {
     position: absolute;
     bottom: -20px;
     left: 50%;
+
     transform: translateX(-50%);
     border-width: 10px;
     border-style: solid;
